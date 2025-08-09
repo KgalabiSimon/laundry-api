@@ -148,6 +148,7 @@ async def api_info():
             "workers": "/api/v1/workers",
             "services": "/api/v1/services",
             "loyalty": "/api/v1/loyalty",
+            "notifications": "/api/v1/notifications",
             "analytics": "/api/v1/analytics"
         }
     }

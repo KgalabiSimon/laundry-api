@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.v1.endpoints import auth
+from app.api.v1.endpoints import auth, users, customers, orders, workers, services, loyalty
 
 api_router = APIRouter()
 
@@ -7,10 +7,11 @@ api_router = APIRouter()
 api_router.include_router(auth.router, prefix="/auth", tags=["Authentication"])
 
 # Placeholder for other routers that will be created
-# api_router.include_router(users.router, prefix="/users", tags=["Users"])
-# api_router.include_router(customers.router, prefix="/customers", tags=["Customers"])
-# api_router.include_router(orders.router, prefix="/orders", tags=["Orders"])
-# api_router.include_router(workers.router, prefix="/workers", tags=["Workers"])
-# api_router.include_router(services.router, prefix="/services", tags=["Services"])
-# api_router.include_router(loyalty.router, prefix="/loyalty", tags=["Loyalty"])
+api_router.include_router(users.router, prefix="/users", tags=["Users"])
+api_router.include_router(customers.router, prefix="/customers", tags=["Customers"])
+api_router.include_router(orders.router, prefix="/orders", tags=["Orders"])
+api_router.include_router(workers.router, prefix="/workers", tags=["Workers"])
+api_router.include_router(services.router, prefix="/services", tags=["Services"])
+api_router.include_router(loyalty.router, prefix="/loyalty", tags=["Loyalty"])
+api_router.include_router(loyalty.router, prefix="/notificaions", tags=["notifications"])
 # api_router.include_router(analytics.router, prefix="/analytics", tags=["Analytics"])
